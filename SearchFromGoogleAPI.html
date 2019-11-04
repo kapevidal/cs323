@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Search From Google API</title>
+      <meta charset="utf-8">
+      <meta name="author" content="Kirsten Pevidal">
+      <meta name="description" content="CS355 Project">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" type="text/css" href="css/animation.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #D40A43;">
+          <a class="navbar-brand order-md-last" href="index.html">Project SARA <i class="fas fa-asterisk"></i></a>
+          <button class="navbar-toggler navbar-toggler-left collapsed" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            <span> </span>
+            <span> </span>
+            <span> </span>		
+          </button>
+          
+          <div class="collapse navbar-collapse" id="collapsingNavbar">
+            <ul class="nav navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+              </li>
+              <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">
+                  Course
+                </a>
+                <div class="dropdown-menu fade in">
+                  <a class="dropdown-item" href="https://www.zybooks.com//">Zybooks</a>
+                  <a class="dropdown-item" href="https://tophat.com/">TopHat</a>
+                  <a class="dropdown-item" href="https://tinyurl.com/CSCI355-Fall2019">Google Drive</a>
+                  <a class="dropdown-item" href="https://www.w3schools.com/">W3schools</a>
+                </div>
+              </li>
+
+               <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                  Search
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="SearchFromFile.html">From File</a>
+                  <a class="dropdown-item" href="SearchFromGoogleAPI.html">Google API </a>
+                </div>
+              </li>
+
+              <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                  Browser
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="browser.html#navigatorSection">Navigator</a>
+                  <a class="dropdown-item" href="browser.html#windowSection">Window</a>
+                  <a class="dropdown-item" href="browser.html#screenSection">Screen</a>
+                  <a class="dropdown-item" href="browser.html#locationSection">Location</a>
+                  <a class="dropdown-item" href="browser.html#geolocationSection">Geolocation</a>
+                </div>
+              </li>
+
+              <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                  About
+                </a>
+                <div class="dropdown-menu">
+                <a class="dropdown-item" href="AboutTheDevelopers.html">About the Developer</a>
+                <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="contact.html">Contact Me</a>
+                </div>
+              </li>
+            
+            </ul>
+          </div>
+        </nav>
+    
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="text-danger" href="#">Search</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Google API</li>
+          </ol>
+        </nav>
+        <main role="main" class="container">
+ 	        <div class="jumbotron jumbotron-search">
+                <h1 class="text-center">  Web Custom Search</h1>
+                <p class="lead text-center"><br>Powered by G&#x1F440;gle API <i class="fab fa-google"></i></p>
+                
+                     <div id="le-alert" class="alert alert-success alert-block text-center fade show">
+	      		        <button type="button" class="close">
+	      		        &times;</button>"Thank you for using the Search from File download function"
+	      		        </div>
+                
+                <form id="searchbar" action="javascript:void(0);">
+		          <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+		            <div class="input-group">
+		              <input id="inputsearch" type="text" name="search" placeholder="Hi. Looking for something?" class="form-control border-0 bg-light">
+		             
+		                <button id="button-addon1" type="submit" class="btn btn-link text-danger"><i class="fa fa-search"></i></button>
+		           
+		            </div>
+		          </div>
+          		</form>
+          		
+          		  <div class="selectors2">
+	          <button onclick="selectAll()" value="click1" type="button" class="btn btn-danger btn-sm">Select All</button>
+			  <button onclick="deselectAll()"type="button" value="click2" class="btn btn-secondary btn-sm">Deselect All</button>
+	          </div>
+	        	  
+          	  <div class="results">
+          	  </div>
+	          	  
+	          	  <div class="download">
+	  	    		<div class="float-right">
+		          	   <form id="download-form" class="form-inline" method="post" onsubmit="return downlow()" role="form"> 
+			          	
+			          	<label class="my-1 mr-2" for="inlineform">File Format:</label>
+	                    <select class="custom-select my-1 mr-sm-2" id="inlineform" required="required" data-error="File Type not specified.">
+					    <option value=""></option>
+					    <option value="1">CSV</option>
+					    <option value="2">JSON</option>
+					    <option value="3">XML</option>
+					    </select>  
+					    <div class="help-block with-errors"></div>
+		          	   
+		          	    <label for="form_name">File Name:</label>
+	                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Enter File Name*" required="required" data-error="File name required.">
+	                    <div class="help-block with-errors"></div>
+	                  	<p>&nbsp;</p>	
+	                  	
+	      		        <input type="submit" class="btn btn-danger btn-send" value="Download"> 
+	      		  
+                       </form>
+                
+            </div>
+                </div>
+            </div>
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="js/googlesearch.js"></script>
+    </body>
+</html>

@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+
+.nav-item{ 
+	font-family: 'Roboto Mono', monospace !important;
+  }
+
+body {
+	min-height: 75rem;
+  	padding-top: 4.5rem;
+  	background:url(../img/wp2.gif) no-repeat center center fixed;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	background-size: cover;
+  	-o-background-size: cover;
+}
+
+
+.jumbotron {
+  	opacity: 1;
+  	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../img/qc.jpg");
+  	background-size: cover;
+}
+
+.jumbo_text {
+	font-family: 'Roboto Mono', monospace !important;
+	color: white;
+}
+
+.jumbotron-custom {
+
+    background: none !important;
+}
+
+.jumbotron-search {
+
+    background: #fcfcfc !important;
+    overflow-x: auto !important;
+    font-family: 'Roboto Mono', monospace !important;
+}
+
+
+.navbar-brand{
+	font-family: 'Staatliches', cursive !important;
+    font-size: 20px !important;
+}
+
+.fab {
+  	font-size: 30px;
+  	width: 30px;
+	text-align: center;
+  	text-decoration: none;
+}
+
+.breadcrumb {
+    padding: 2px 15px !important;
+    margin-right: 20px !important;
+    margin-left: 20px !important;
+}
+
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-control-underlined {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  padding-left: 0;
+}
+
+.form-control::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+.results {
+display:none;
+border-style: solid;
+padding: 30px;
+margin:30px;
+overflow-wrap: break-word;
+}
+
+.selectors2 {
+display:none;
+margin:20px;
+
+}
+
+.download{
+display:none;
+margin-top: 30px
+}
+
+
+#navigatorSection {
+    padding-top:70px;
+    height:600px;
+    color: #000000;
+    background-color: #fffdd0;
+    margin-top: -40px;
+    font-family: 'Roboto Mono', monospace !important;
+}
+
+#windowSection {
+    padding-top:70px;
+    height:450px;
+    color: #000000;
+    background-color: #fffdd0;
+    margin-top: 50px;
+    font-family: 'Roboto Mono', monospace !important;
+}
+
+#screenSection {
+    padding-top:70px;
+    height:450px;
+    color: #000000;
+    background-color: #fffdd0;
+    margin-top: 50px;
+    font-family: 'Roboto Mono', monospace !important;
+}
+
+#locationSection {
+    padding-top:70px;
+    height:450px;
+    color: #000000; 
+    background-color: #fffdd0;
+    margin-top: 50px;
+    overflow-wrap: break-word;
+    font-family: 'Roboto Mono', monospace !important;
+    
+}
+
+#geolocationSection {
+    padding-top:70px;
+    height:450px;
+    color: #000000;
+	background-color: #fffdd0;
+    margin-top: 50px;
+    font-family: 'Roboto Mono', monospace !important;
+}
+
